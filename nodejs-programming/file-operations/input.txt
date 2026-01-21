@@ -1,0 +1,2 @@
+Node js is used for backend development
+It is fast and powerful
