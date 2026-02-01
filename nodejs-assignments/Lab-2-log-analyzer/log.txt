@@ -1,0 +1,7 @@
+INFO: Server started
+INFO: User logged in
+ERROR: Database connection failed
+INFO: Data fetched
+ERROR: Invalid user input
+ERROR: Timeout occurred
+INFO: Server stopped

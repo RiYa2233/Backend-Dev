@@ -1,0 +1,7 @@
+
+Log File Analysis Report
+------------------------
+Total Entries: 7
+INFO Count: 4
+ERROR Count: 3
+    
