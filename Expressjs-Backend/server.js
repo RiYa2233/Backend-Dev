@@ -9,6 +9,15 @@ app.listen(PORT, () => {
   console.log("Server is listening on port:8000");
 });
 
+app.use((req,res,next)=>{
+  console.log("I am middleware 1");
+  next();
+});
+
+app.use((req,res, next)=>{
+  console.log("I am Middleware 2");
+});
+
 
 const readStudentsFromFile = async () => {
   const data = await fs.readFile("./students.json", "utf-8");
@@ -24,6 +33,23 @@ app.get("/students", async(req, res) => {
     return res.status(200).json(students);
 })
 
+const loggerFile= ()=>{
+  const log = 'Request at :${new Date().toLocalString()} method: ${req, method'
+  fs.appendFile("./log.txt",log , (err)=> {
+    if(err){
+      console.log(err);
+    }
+  });
+  next();
+}
+
+const readStudentOfFile = async () => {
+  const data = await fs.readFile("./students.json", "utf-8")
+}
+
+const writeStudentsToFile = async () =>{
+
+}
 app.put("/students/:id", async (req, res) => {
   try {
     const userId = parseInt(req.params.id);
